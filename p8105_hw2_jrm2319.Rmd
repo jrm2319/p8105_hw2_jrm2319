@@ -75,7 +75,35 @@ trash_wheel =
 trash_wheel$sports_balls = round(trash_wheel$sports_balls)
 trash_wheel$sports_balls = as.integer(trash_wheel$sports_balls)
 ```
- 
 
+_Professor Trash Wheel Data_
+
+Importing data from excel file
+```{r}
+prof_trash_wheel = read_excel("./data/202409 Trash Wheel Collection Data.xlsx", sheet = "Professor Trash Wheel")
+```
+
+Cleaning Data
+```{r}
+prof_trash_wheel = 
+  janitor::clean_names(prof_trash_wheel) %>%
+  rename(weight = weight_tons, volume = volume_cubic_yards) %>% 
+  drop_na(dumpster)
+```
+
+_Gwynnda Data_
+
+Import data
+```{r}
+gwynnda_trash_wheel = read_excel("./data/202409 Trash Wheel Collection Data.xlsx", sheet = "Gwynnda Trash Wheel")
+```
+
+Cleaning Data
+```{r}
+gwynnda_trash_wheel = 
+  janitor::clean_names(gwynnda_trash_wheel) %>%
+  rename(weight = weight_tons, volume = volume_cubic_yards) %>% 
+  drop_na(dumpster)
+```
 
 ### **Problem 3**
