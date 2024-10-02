@@ -30,6 +30,34 @@ This data set is called "nyc_subway" and contains the following variables: line,
 
 I began by loading in the data and viewing it, I did not provide that in the output document given the data set is large. Then, I retained the variables listed above in the data set using the 'select' function. Finally, I created a new variable, Entry.logical. This new variable takes the Entry variable values and modifies the new variable to be True/False. I chose to make a new variable in this case to ensure the function was being run/used correctly without making permanent changes to the Entry variable. 
 
+The data set has 20 variables and 1,868 observations. This data set would be considered tidy because the columns are variables and the rows are observations and every value has a cell. 
+
+**Data set questions:** 
+
+There are **465** distinct stations in this data set, this consists of stations with different lines and station names. 
+```{r echo=TRUE}
+distinct_station = distinct(nyc_subway, Line, Station.Name)
+count(distinct_station)
+```
+
+There are **468** stations that are ADA compliant. 
+```{r echo=TRUE}
+ADA_compliant = filter(nyc_subway, ADA == TRUE)
+count(ADA_compliant)
+
+```
+
+There are **69** station entrances/exits without vending that allow entrance. 
+```{r echo=TRUE}
+novending_yesentry = filter(nyc_subway, Vending == "NO", Entry == "YES")
+count(novending_yesentry)
+```
+
+**Reformatting data:**
+```{r}
+
+```
+
 ### **Problem 2**
 
 ### **Problem 3**
