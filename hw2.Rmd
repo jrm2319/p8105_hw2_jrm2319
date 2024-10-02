@@ -1,0 +1,18 @@
+---
+title: "Homework 2"
+output: github_document
+Name: Jasmin Martinez
+Date: 10/02/24
+---
+Problem 1
+
+Problem 2
+
+Problem 3
+
+
+```{r}
+samp = rnorm(100)
+length(samp)
+```
+
