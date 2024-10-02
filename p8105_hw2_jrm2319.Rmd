@@ -4,7 +4,24 @@ output: github_document
 Name: Jasmin Martinez
 Date: 10/02/24
 ---
-Problem 1
+**Problem 1**
+Loading in data and clean variable names: 
+```{r}
+library(readr)
+library(snakecase)
+library(dplyr)
+
+nyc_subway = read.csv("./data/NYC_Transit_Subway_Entrance_And_Exit_Data.csv")
+
+nyc_subways = janitor::clean_names(nyc_subway)
+```
+
+Retain specifed variables 
+```{r}
+nyc_subway = select(nyc_subway, Line, Station.Name, Station.Latitude, Station.Longitude, Route1:Route11, Entrance.Type, Entry, Vending, Entrance.Type, ADA)
+```
+
+
 
 Problem 2
 
