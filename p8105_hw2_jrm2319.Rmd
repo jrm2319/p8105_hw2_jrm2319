@@ -146,13 +146,8 @@ baker_df = read.csv("./data/gbb_datasets/bakers.csv") %>%
     rename(baker = Baker.Name)
 bakes_df = read.csv("./data/gbb_datasets/bakes.csv") %>% 
   rename(series = Series, episode = Episode, baker = Baker)
-head(bakes_df)
+
 results_df = read.csv("./data/gbb_datasets/results.csv", header = TRUE, skip = 2)
-head(results_df)
-```
-
-```{r}
-
 ```
 
 I imported the three data frames to be merged. First, I adjusted the variable name "baker" to be consist across all the data frames, since this will be the variable I will use to merge the three data frames. 
